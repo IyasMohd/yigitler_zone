@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:yigitler_zone/screens/chat_screen.dart';
+import 'package:yigitler_zone/feature/welcom/pages/welcome_page.dart';
 
-import 'authenticate.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,17 +19,15 @@ class MyApp extends StatelessWidget {
         splitScreenMode: true,
         builder: (context, child) {
           return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            title: 'Yigitler Zone',
-            theme: ThemeData(
-              drawerTheme:
-                  const DrawerThemeData(scrimColor: Colors.transparent),
-              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-              useMaterial3: true,
-            ),
-            home: Authenticate(),
-            routes: {'/chat-screen': (context) =>  ChatScreen()},
-          );
+              debugShowCheckedModeBanner: false,
+              title: 'Yigitler Zone',
+              theme: ThemeData(
+                drawerTheme:
+                    const DrawerThemeData(scrimColor: Colors.transparent),
+                colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+                useMaterial3: true,
+              ),
+              home: const WelcomePage());
         });
   }
 }
